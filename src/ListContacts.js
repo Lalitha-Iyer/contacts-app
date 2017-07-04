@@ -48,7 +48,7 @@ class ListContacts extends Component {
             onChange={(event) => this.handleChange(event.target.value)}
           />
 
-          <Link to="/add" className="add-contact" > Add Contact</Link>
+          <Link to="/create" className="add-contact"> Add Contact</Link>
         </div>
         {
           showingContacts.length !== contacts.length && 
