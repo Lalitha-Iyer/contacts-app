@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
@@ -20,7 +20,7 @@ class ListContacts extends Component {
   }
 
   render() {
-    const { contacts, onDeleteContact } = this.props
+    const { contacts } = this.props
 
     let showingContacts
     if (this.state.query !== '') {
@@ -47,6 +47,8 @@ class ListContacts extends Component {
             value={this.state.query}
             onChange={(event) => this.handleChange(event.target.value)}
           />
+
+          <a href="#add" className="add-contact" onClick={this.props.onNavigate}> Add Contact</a>
         </div>
         {
           showingContacts.length !== contacts.length && 
