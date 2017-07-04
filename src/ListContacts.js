@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
-
+import {Link} from 'react-router-dom'
 class ListContacts extends Component {
 
   state = {
@@ -48,7 +48,7 @@ class ListContacts extends Component {
             onChange={(event) => this.handleChange(event.target.value)}
           />
 
-          <a href="#add" className="add-contact" onClick={this.props.onNavigate}> Add Contact</a>
+          <Link to="/add" className="add-contact" > Add Contact</Link>
         </div>
         {
           showingContacts.length !== contacts.length && 
