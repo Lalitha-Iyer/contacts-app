@@ -10,10 +10,6 @@ class App extends Component {
     ]
   }
 
-  onNavigate = () => {
-    this.setState({ screen: 'add' })
-  }
-
   componentDidMount() {
     ContactsApi.getAll().then((contacts) => {
       this.setState({ contacts })
@@ -32,7 +28,7 @@ class App extends Component {
     return (
       <div >
         <Route exact path="/" render={() => (
-          <ListContacts contacts={this.state.contacts} onDeleteContact={this.removeContact} onNavigate={this.onNavigate} > </ListContacts>
+          <ListContacts contacts={this.state.contacts} onDeleteContact={this.removeContact} > </ListContacts>
         )}> </Route>
       
        <Route  path="/create" component={AddContact} />
